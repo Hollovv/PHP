@@ -1,5 +1,6 @@
 <?php 
-function MyExpl(array $separator, string $string)
+
+function myExpl(array $separator, string $string)
 {
 	$arr = str_split($string);
 	$arr_length = count($arr);
@@ -20,10 +21,11 @@ function MyExpl(array $separator, string $string)
 		 
 	foreach($arr as $value)
 		$result = $result.$value;
+		
 	return $result;
 }
 
-function MyExplAlt(array $separator, string $string)
+function myExplAlt(array $separator, string $string)
 {
 	$arr = str_split($string);
 	$arr_length = count($arr);
@@ -53,11 +55,12 @@ function MyExplAlt(array $separator, string $string)
 
 	foreach($arr as $value)
 		$result = $result.$value;
+		
 	return $result;
 }
 
 $separatorArray = array(1, 2);
 $pizza = "pice1pice2pice1pice2pice1pice2pice1pice2pice1pice2pice1pice";
-$pieces = MyExpl($separatorArray, $pizza);                            
+$pieces = myExpl($separatorArray, $pizza);                            
 
 echo $pieces;
