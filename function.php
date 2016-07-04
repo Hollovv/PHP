@@ -9,19 +9,26 @@ function myExpl(array $separator, string $string)
 	
 	$result = '';
 	
-	if($separator == "" ||
+	if (
+	   $separator == "" ||
 	   $separator == false ||
-	   $separator == null) 
-		return false;
+	   $separator == null
+	) { 
+	    return false;
+	}
 	
-	for($i=0; $i<$arr_length; $i++)
-		for($j=0; $j<$sep_length; $j++)
-			if($arr[$i] == $separator[$j])
-				$arr[$i] = ' ';
+	for ($i = 0; $i < $arr_length; $i++) {
+	   	for ($j = 0; $j < $sep_length; $j++) {
+	    	if ($arr[$i] == $separator[$j]) {
+	    	    $arr[$i] = ' ';
+	    	}
+	   	}
+	}
 		 
-	foreach($arr as $value)
-		$result = $result.$value;
-		
+	foreach ($arr as $value) {
+	   	$result = $result.$value;
+	}
+	
 	return $result;
 }
 
@@ -37,25 +44,31 @@ function myExplAlt(array $separator, string $string)
 	
 	$result = '';
 	
-	if($separator == "" ||
-	   $separator == false ||
-	   $separator == null) 
-		return false;
+	if (
+	    $separator == "" ||
+	    $separator == false ||
+	    $separator == null
+	) { 
+	   	return false;
+	}
 	
-	for($i=0; $i<$sep_length; $i++)
-		do{
-			$isDoing = true;
+	for ($i = 0; $i < $sep_length; $i++) {
+		do {
+		   	$isDoing = true;
 			$sepPos = array_search($separator[$i], $arr);
-			if($sepPos != false) 
+			
+			if ($sepPos != false) {
 				$arr[$sepPos] = ' ';
-			else
+			} else {
 				$isDoing = false;
-		}	
-		while($isDoing);
-
-	foreach($arr as $value)
+			}
+		} while ($isDoing);
+	}
+	
+	foreach ($arr as $value) {
 		$result = $result.$value;
-		
+	}
+	
 	return $result;
 }
 
